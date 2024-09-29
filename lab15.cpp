@@ -44,4 +44,10 @@ int main(){
     string title;
     int year;
     string screen_writer;
+
+    if (input.txt.is_open()){
+        while (getline(input.txt, title) && input.txt >> year && input.txt.ignore() && getline(input.txt, screen_writer)){
+            
+        }
+    }
 }
