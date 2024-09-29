@@ -44,10 +44,18 @@ int main(){
     string title;
     int year;
     string screen_writer;
+    movie temporary_movie;
 
     if (input.txt.is_open()){
         while (getline(input.txt, title) && input.txt >> year && input.txt.ignore() && getline(input.txt, screen_writer)){
-            
+            temporary_movie.set_title(title);
+            temporary_movie.set_year(year);
+            temporary_movie.set_screen_writer(screen_writer);
         }
+        input.txt.close();
+    }
+
+    for (const movie& movie : movies){
+        movie.print();
     }
 }
