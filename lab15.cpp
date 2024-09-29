@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Movie{
+class movie{
     private:
         string title;
         int year;
@@ -40,5 +40,8 @@ class Movie{
 };
 
 int main(){
-    
+    vector<movie> movies;
+    string title;
+    int year;
+    string screen_writer;
 }
