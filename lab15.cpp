@@ -51,8 +51,8 @@ int main(){
 
     ifstream inputFile(input.txt);
 
-    if (input.txt.is_open()){
-        while (getline(input.txt, title) && input.txt >> year && input.txt.ignore() && getline(input.txt, screen_writer)){
+    if (inputFile.is_open()){
+        while (getline(inputFile, title) && inputFile >> year && inputFile.ignore() && getline(inputFile, screen_writer)){
             temporary_movie.set_title(title);
             temporary_movie.set_year(year);
             temporary_movie.set_screen_writer(screen_writer);
