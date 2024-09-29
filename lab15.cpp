@@ -4,7 +4,7 @@
 #include <fstream>
 using namespace std;
 
-class movie{
+class Movie{
     private:
         string title;
         int year;
@@ -43,25 +43,32 @@ class movie{
 };
 
 int main(){
-    vector<movie> movies;
+    vector<Movie> movies;
     string title;
     int year;
     string screen_writer;
-    movie temporary_movie;
+    Movie temporary_movie;
 
-    ifstream inputFile(input.txt);
+    ifstream inputFile("input.txt");
 
     if (inputFile.is_open()){
         while (getline(inputFile, title) && inputFile >> year && inputFile.ignore() && getline(inputFile, screen_writer)){
             temporary_movie.set_title(title);
             temporary_movie.set_year(year);
             temporary_movie.set_screen_writer(screen_writer);
+
+            movies.push_back(temporary_movie);
         }
-        input.txt.close();
+        inputFile.close();
+    } else {
+        cout << "Can't open" << endl;
+        return 1;
     }
 
-    for (const movie& movie : movies){
+    for (const Movie& movie : movies){
         movie.print();
         cout << endl;
     }
+
+    return 0;
 }
