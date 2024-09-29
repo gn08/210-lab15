@@ -5,5 +5,19 @@ class Movie{
     private:
         string title;
         int year;
-        sttring screen_writer;
+        string screen_writer;
+
+    public:
+        void set_title(){
+
+        }
+
+        void set_year(){
+
+        }
+
+        void set_screen_writer(){
+            
+        }
+
 }
