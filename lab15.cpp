@@ -32,4 +32,13 @@ class Movie{
             return screen_writer;
         } 
 
+        void print() const{
+            cout << "Movie: " << title << endl;
+            cout << "Year: " << year << endl;
+            cout << "Screen writer: " << screen_writer << endl;
+        }
+};
+
+int main(){
+    
 }
