@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
 using namespace std;
 
 class movie{
@@ -8,15 +11,15 @@ class movie{
         string screen_writer;
 
     public:
-        void set_title(){
+        void set_title(const string& t){
             title = t;
         }
 
-        void set_year(){
+        void set_year(int y){
             year = y;
         }
 
-        void set_screen_writer(){
+        void set_screen_writer(const string& sw){
             screen_writer = sw;
         }
 
@@ -46,6 +49,8 @@ int main(){
     string screen_writer;
     movie temporary_movie;
 
+    ifstream inputFile(input.txt);
+
     if (input.txt.is_open()){
         while (getline(input.txt, title) && input.txt >> year && input.txt.ignore() && getline(input.txt, screen_writer)){
             temporary_movie.set_title(title);
@@ -57,5 +62,6 @@ int main(){
 
     for (const movie& movie : movies){
         movie.print();
+        cout << endl;
     }
 }
