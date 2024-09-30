@@ -1,15 +1,16 @@
 UML:
-----------------------------
-|           Movie           |
-----------------------------
-|- title: string            |
-|- year: int                |
-|-screen_writer: string     |
-----------------------------
-|+ set_title(t: string)     |
-|+ set_year
-|
-|
-|
-|
-|
+------------------------------------
+|           Movie                  |
+------------------------------------
+|- title: string                   |
+|- year: int                       |
+|-screen_writer: string            |
+------------------------------------
+|+ set_title(t: string)            |
+|+ set_year(y: int)                |
+|+ set_screen_writer(sw: string)   |
+|+ get_title(): string             |
+|+ get_year(): int                 |
+|+ get_screen_writer(): string     |
+|+ print(): void                   |
+------------------------------------
