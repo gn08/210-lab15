@@ -1,0 +1,15 @@
+UML:
+----------------------------
+|           Movie           |
+----------------------------
+|- title: string            |
+|- year: int                |
+|-screen_writer: string     |
+----------------------------
+|+ set_title(t: string)     |
+|+ set_year
+|
+|
+|
+|
+|
