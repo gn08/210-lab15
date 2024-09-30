@@ -45,7 +45,8 @@ class Movie{
         string get_screen_writer() const{
             return screen_writer;
         } 
-
+    // print() prints the movie iformation
+    // returns: void
         void print() const{
             cout << "Movie: " << title << endl;
             cout << "Year: " << year << endl;
@@ -54,28 +55,34 @@ class Movie{
 };
 
 int main(){
+    // vector storing movie stuff
     vector<Movie> movies;
     string title;
     int year;
     string screen_writer;
+    //temporary movie location
     Movie temporary_movie;
 
+    // open input file
     ifstream inputFile("input.txt");
 
     if (inputFile.is_open()){
+        // information on file, set information
         while (getline(inputFile, title) && inputFile >> year && inputFile.ignore() && getline(inputFile, screen_writer)){
             temporary_movie.set_title(title);
             temporary_movie.set_year(year);
             temporary_movie.set_screen_writer(screen_writer);
-
+        // add temporary movie
             movies.push_back(temporary_movie);
         }
+        //close file
         inputFile.close();
     } else {
+        //error message if not open
         cout << "Can't open" << endl;
         return 1;
     }
-
+//print movies
     for (const Movie& movie : movies){
         movie.print();
         cout << endl;
